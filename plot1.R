@@ -7,8 +7,6 @@ dados <- read.table('household_power_consumption.txt', header=TRUE,sep=';', na.s
                     colClasses=c(rep('character', 2),rep('numeric', 7)))
 dados$Date <- dmy(dados$Date)
 dados$Time <- hms(dados$Time)
-inicio <- ymd('2007-02-01')
-fim <- ymd('2007-02-02')
 dados <- subset(dados, year(Date) == 2007 & month(Date) == 2 & (day(Date) == 1 | day(Date) == 2))
 dados$date.time <- dados$Date + dados$Time
 
